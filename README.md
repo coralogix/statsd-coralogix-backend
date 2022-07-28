@@ -1,5 +1,10 @@
 # statsd-coralogix-backend
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![npm](https://img.shields.io/npm/v/@coralogix/statsd-backend.svg)](https://www.npmjs.com/package/@coralogix/statsd-backend)
+[![node](https://img.shields.io/node/v/@coralogix/statsd-backend.svg)](https://www.npmjs.com/package/@coralogix/statsd-backend)
+-----
+
 A plugin to connect StatsD to [Coralogix]
 
 ## Configuration
@@ -36,21 +41,21 @@ This would end up adding labels
 * with name `tag_2`and value `value_2`
 
 ```bash
-echo "timer_test:65|ms|#tag_1:value,tag_2:value_2" | /usr/bin/nc -u -w0 127.0.0.1 812
+echo "timer_test:65|ms|#tag_1:value,tag_2:value_2" | /usr/bin/nc -u -w0 127.0.0.1 8125
 ```
 
 ## How to install the backend
 
 ```bash
 cd /path/to/statsd-dir
-npm install statsd-coralogix-backend
+npm install @coralogix/statsd-backend
 ```
 
 ### How to enable the backend
 Add `statsd-coralogix-backend` to your list of StatsD backends:
 
 ```js
-backends: ["statsd-coralogix-backend"]
+backends: ["@coralogix/statsd-backend"]
 ```
 
 [Coralogix]: https://coralogix.com/
@@ -64,7 +69,7 @@ module.exports = {
   deleteTimers: true,
   deleteCounters: true,
   port: 8125,
-  backends: ["statsd-coralogix-backend"],
+  backends: ["@coralogix/statsd-backend"],
   coralogix: {
     privateKey: "****FILL_ME_IN****",
     apiHost: "https://prometheus-gateway.coralogix.com:9090/prometheus/api/v1/write",

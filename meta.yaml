@@ -1,0 +1,6 @@
+name: statsd-coralogix-backend
+CX_PRODUCT: cs
+deployable_type: library
+code_language: nodejs
+tests: true
+public: true
