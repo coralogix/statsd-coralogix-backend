@@ -5,7 +5,9 @@
 [![node](https://img.shields.io/node/v/@coralogix/statsd-backend.svg)](https://www.npmjs.com/package/@coralogix/statsd-backend)
 -----
 
-A plugin to connect StatsD to [Coralogix]
+A plugin to connect StatsD to [Coralogix].
+
+Coralogix documentation can be found [here](https://coralogix.com/docs/statsd/).
 
 ## Configuration
 
@@ -13,7 +15,7 @@ A plugin to connect StatsD to [Coralogix]
 module.export: {
     // You can get it from coralogix UI at `/#/settings/send-your-data`
     privateKey: "****FILL_ME_IN****",
-    apiHost: "https://prometheus-gateway.coralogix.com:9090/prometheus/api/v1/write",
+    apiHost: "https://prometheus-gateway.coralogix.com/prometheus/api/v1/write",
     // Your metrics will be prefixed by this prefix
     prefix: "test_prefix",
     // Coralogix specific label that will be added to all metrics
@@ -72,7 +74,7 @@ module.exports = {
   backends: ["@coralogix/statsd-backend"],
   coralogix: {
     privateKey: "****FILL_ME_IN****",
-    apiHost: "https://prometheus-gateway.coralogix.com:9090/prometheus/api/v1/write",
+    apiHost: "https://prometheus-gateway.coralogix.com/prometheus/api/v1/write",
     prefix: "test_prefix",
     applicationName: "test_application",
     subsystemName: "test_subsystem",
