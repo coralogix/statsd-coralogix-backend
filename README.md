@@ -9,6 +9,11 @@ A plugin to connect StatsD to [Coralogix].
 
 Coralogix documentation can be found [here](https://coralogix.com/docs/statsd/).
 
+## Breaking change notice
+
+* In version `0.1.*` we were calculating `_total` for counters as rate per sedonds. This was fixed in `0.2.0` where we
+  added internal acumulator for `_total` of counters and we do report the metric correctly.
+
 ## Configuration
 
 ```js
@@ -22,6 +27,10 @@ module.export: {
     applicationName: "test_application",
     // Coralogix specific label that will be added to all metrics
     subsystemName: "test_subsystem",
+    // For controlling number of seconds for which we accumulate counter totals before droping them,
+    //   this is here to not leak memory with infinite number of metrics kept there. Defaults to 3600.
+    // Generally it should be lot higher than you flush_interval.
+    totalsAccumulatorTtlSeconds: 3600,
     // Mappings used to define histogram buckets and whatnot
     mappings: {
       timer_test: {
@@ -78,6 +87,7 @@ module.exports = {
     prefix: "test_prefix",
     applicationName: "test_application",
     subsystemName: "test_subsystem",
+    totalsAccumulatorTtlSeconds: 3600,
     mappings: {
       timer_test: {
         histogram_options: { buckets: [50, 100, 250, 500, 1000] },
