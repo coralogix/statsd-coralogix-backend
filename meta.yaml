@@ -1,5 +1,5 @@
 name: statsd-coralogix-backend
-CX_PRODUCT: cs
+CX_PRODUCT: ingestion
 deployable_type: library
 code_language: nodejs
 tests: true
