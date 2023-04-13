@@ -20,7 +20,7 @@ Coralogix documentation can be found [here](https://coralogix.com/docs/statsd/).
 module.export: {
     // You can get it from coralogix UI at `/#/settings/send-your-data`
     privateKey: "****FILL_ME_IN****",
-    apiHost: "https://prometheus-gateway.coralogix.com/prometheus/api/v1/write",
+    apiHost: "https://ingress.coralogix.com/prometheus/v1",
     // Your metrics will be prefixed by this prefix
     prefix: "test_prefix",
     // Coralogix specific label that will be added to all metrics
@@ -83,7 +83,7 @@ module.exports = {
   backends: ["@coralogix/statsd-backend"],
   coralogix: {
     privateKey: "****FILL_ME_IN****",
-    apiHost: "https://prometheus-gateway.coralogix.com/prometheus/api/v1/write",
+    apiHost: "https://ingress.coralogix.com/prometheus/v1",
     prefix: "test_prefix",
     applicationName: "test_application",
     subsystemName: "test_subsystem",
