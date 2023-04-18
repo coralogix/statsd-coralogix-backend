@@ -2,7 +2,7 @@
   "author": "Coralogix <support@coralogix.com>",
   "name": "@coralogix/statsd-backend",
   "description": "A StatsD backend that send metrics to Coralogix",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "homepage": "https://github.com/coralogix/statsd-coralogix-backend",
   "repository": {
     "type": "git",
