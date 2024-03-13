@@ -1,4 +1,4 @@
-# statsd-coralogix-backend
+# DEPRECATED statsd-coralogix-backend
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![npm](https://img.shields.io/npm/v/@coralogix/statsd-backend.svg)](https://www.npmjs.com/package/@coralogix/statsd-backend)
@@ -6,8 +6,10 @@
 -----
 
 A plugin to connect StatsD to [Coralogix].
+## Deprecation notice
 
-Coralogix documentation can be found [here](https://coralogix.com/docs/statsd/).
+OTEL collector should be used instead of this.
+Coralogix documentation on using it can be found [here](https://coralogix.com/docs/statsd/).
 
 ## Breaking change notice
 
